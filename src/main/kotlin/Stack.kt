@@ -34,8 +34,6 @@ class Stack<T>(var capacity: Int) {
         return null
     }
 
-
-
     fun contains(other: T?): Boolean{
         for(element in elements){
             if(element == other){

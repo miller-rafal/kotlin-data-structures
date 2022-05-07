@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5128de6-ead9-4e7f-a449-9409b2def299" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Queue.kt" afterDir="false" />
+    <list default="true" id="a5128de6-ead9-4e7f-a449-9409b2def299" name="Changes" comment="some fixes to Stack class, implemented stack test method&#10;TODO - Queue class, test Stack.clear()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Stack.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Stack.kt" afterDir="false" />
@@ -70,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651860960032</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="some fixes to Stack class, implemented stack test method&#10;TODO - Queue class, test Stack.clear()">
+      <created>1651946512086</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651946512086</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,6 +92,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="some fixes to Stack class, implemented stack test method&#10;TODO - Queue class" />
+    <MESSAGE value="some fixes to Stack class, implemented stack test method&#10;TODO - Queue class, test Stack.clear()" />
+    <option name="LAST_COMMIT_MESSAGE" value="some fixes to Stack class, implemented stack test method&#10;TODO - Queue class, test Stack.clear()" />
   </component>
 </project>

@@ -1,10 +1,10 @@
 fun main() {
 
-    var stackCapacity = 5
+    val stackCapacity = 5
 
-    var stack = Stack<String>(stackCapacity)
+    val stack = Stack<String>(stackCapacity)
 
-    var stackElements: ArrayList<String> = arrayListOf("first", "second", "third", "fourth", "fifth")
+    val stackElements: ArrayList<String> = arrayListOf("first", "second", "third", "fourth", "fifth")
 
     testStringStack(stack, stackElements)
 }
@@ -17,7 +17,7 @@ fun testStringStack(stackUnderTest: Stack<String>, testStrings: ArrayList<String
         println("push('$testString')")
         stackUnderTest.push(testString)
 
-        var peek = stackUnderTest.peek()
+        val peek = stackUnderTest.peek()
         println("peek()='$peek'")
 
         if(peek == testString){
@@ -49,13 +49,34 @@ fun testStringStack(stackUnderTest: Stack<String>, testStrings: ArrayList<String
         println("test failed! :/")
     }
 
+    println("testing contains()...")
+
+    for(testString in testStrings){
+        val containsTestString = stackUnderTest.contains(testString)
+        println("contains('$testString')=$containsTestString")
+    }
+
+    val stringNotPresentInStack = "sixth"
+
+    println("testing contains('$stringNotPresentInStack') (string not present in stack)")
+
+    val containsStringNotPresent = stackUnderTest.contains(stringNotPresentInStack)
+
+    println("contains('$stringNotPresentInStack')=$containsStringNotPresent")
+
+    if(!containsStringNotPresent){
+        println("test successful! :D")
+    }else{
+        println("test failed! :/")
+    }
+
     println("testing peek() and pop()...")
 
     for(i in 1..testStrings.size){
-        var peek = stackUnderTest.peek()
+        val peek = stackUnderTest.peek()
         println("peek()='$peek'")
 
-        var pop = stackUnderTest.pop()
+        val pop = stackUnderTest.pop()
         println("pop()='$pop'")
 
         if(pop == peek){
@@ -85,5 +106,31 @@ fun testStringStack(stackUnderTest: Stack<String>, testStrings: ArrayList<String
         println("test successful! :D")
     }else{
         println("test unsuccessful! :/")
+    }
+
+    println("testing clear()...")
+
+    for(testString in testStrings){
+        println("push('$testString')")
+        stackUnderTest.push(testString)
+    }
+
+    count = stackUnderTest.count
+    println("count=$count")
+
+    println("clear()")
+    stackUnderTest.clear()
+
+    count = stackUnderTest.count
+
+    val isEmpty = stackUnderTest.isEmpty
+
+    println("count=$count")
+    println("isEmpty=$isEmpty")
+
+    if(count == 0 && isEmpty) {
+        println("test successful! :D")
+    }else{
+        println("test failed! :/")
     }
 }
