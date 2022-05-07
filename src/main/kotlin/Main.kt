@@ -1,35 +1,89 @@
 fun main() {
 
-    var myStack = Stack<String>(5)
+    var stackCapacity = 5
 
-    myStack.push("first")
-    myStack.push("second")
-    myStack.push("third")
-    myStack.push("fourth")
-    myStack.push("fifth")
+    var stack = Stack<String>(stackCapacity)
 
-    println("count=${myStack.count}")
+    var stackElements: ArrayList<String> = arrayListOf("first", "second", "third", "fourth", "fifth")
 
-    println("isEmpty=${ myStack.isEmpty() }")
+    testStringStack(stack, stackElements)
+}
 
-    println("peek=${ myStack.peek() }")
+fun testStringStack(stackUnderTest: Stack<String>, testStrings: ArrayList<String>){
 
-    myStack.pop()
-    println("peek=${ myStack.peek() }")
+    println("testing push() and peek()...")
 
-    myStack.pop()
-    println("peek=${ myStack.peek() }")
+    for(testString in testStrings){
+        println("push('$testString')")
+        stackUnderTest.push(testString)
 
-    myStack.pop()
-    println("peek=${ myStack.peek() }")
+        var peek = stackUnderTest.peek()
+        println("peek()='$peek'")
 
-    myStack.pop()
-    println("peek=${ myStack.peek() }")
+        if(peek == testString){
+            println("push('$testString') test successful! :D")
+        }else{
+            println("push('$testString') test failed! :/")
+        }
+    }
 
-    myStack.pop()
-    println("peek=${ myStack.peek() }")
+    println("isEmpty=${ stackUnderTest.isEmpty }")
 
-    println("count=${myStack.count}")
+    var count: Int = stackUnderTest.count
+    println("count=$count")
 
-    println("isEmpty=${ myStack.isEmpty() }")
+    if(count == testStrings.size) {
+        println("successfully pushed all test strings! :D")
+    }
+
+    println("testing attempt to invoke push() on a full stack...")
+
+    var testResult = stackUnderTest.push("sixth")
+    var countAfterTest = stackUnderTest.count
+
+    var testSuccessful = (!testResult) && (countAfterTest == count)
+
+    if(testSuccessful){
+        println("test successful! :D")
+    }else{
+        println("test failed! :/")
+    }
+
+    println("testing peek() and pop()...")
+
+    for(i in 1..testStrings.size){
+        var peek = stackUnderTest.peek()
+        println("peek()='$peek'")
+
+        var pop = stackUnderTest.pop()
+        println("pop()='$pop'")
+
+        if(pop == peek){
+            println("pop() test successful! :D")
+        }else{
+            println("pop() test failed! :/")
+        }
+    }
+
+    println("isEmpty=${ stackUnderTest.isEmpty }")
+
+    count = stackUnderTest.count
+    println("count=$count")
+
+    if(count == 0){
+        println("successfully popped all test strings! :D")
+    }
+
+    println("testing attempt to invoke pop() on an empty stack..")
+
+    testResult = stackUnderTest.pop() != null
+    countAfterTest = stackUnderTest.count
+
+    testSuccessful = (!testResult) && (countAfterTest == count)
+
+    if(testSuccessful){
+        println("test successful! :D")
+    }else{
+        println("test unsuccessful! :/")
+    }
 }

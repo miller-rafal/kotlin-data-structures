@@ -3,14 +3,19 @@ class Stack<T>(var capacity: Int) {
     val count: Int
         get() = elements.count()
 
+    val isEmpty: Boolean
+        get() { return pointer == 0 }
+
     private var elements: ArrayList<T> = arrayListOf<T>()
     private var pointer: Int = 0
 
-    fun push(element: T){
+    fun push(element: T): Boolean{
         if(pointer < capacity){
             elements.add(pointer, element)
             pointer++
+            return true
         }
+        return false
     }
 
     fun pop(): T?{
@@ -23,14 +28,13 @@ class Stack<T>(var capacity: Int) {
 
     fun peek(): T?{
         if(pointer > 0){
-            return elements[pointer - 1]
+            val elementIndex = pointer - 1
+            return elements[elementIndex]
         }
         return null
     }
 
-    fun isEmpty(): Boolean{
-        return elements.isEmpty()
-    }
+
 
     fun contains(other: T?): Boolean{
         for(element in elements){
@@ -44,11 +48,5 @@ class Stack<T>(var capacity: Int) {
     fun clear(){
         elements.clear()
         pointer = 0
-    }
-
-    fun print(){
-        for(element in elements){
-            println(element)
-        }
     }
 }
