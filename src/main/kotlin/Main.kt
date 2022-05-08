@@ -60,11 +60,11 @@ fun testStringStack(stackUnderTest: Stack<String>, testStrings: ArrayList<String
 
     println("testing contains('$stringNotPresentInStack') (string not present in stack)")
 
-    val containsStringNotPresent = stackUnderTest.contains(stringNotPresentInStack)
+    val containsStringNotPresentInStack = stackUnderTest.contains(stringNotPresentInStack)
 
-    println("contains('$stringNotPresentInStack')=$containsStringNotPresent")
+    println("contains('$stringNotPresentInStack')=$containsStringNotPresentInStack")
 
-    if(!containsStringNotPresent){
+    if(!containsStringNotPresentInStack){
         println("test successful! :D")
     }else{
         println("test failed! :/")
@@ -72,7 +72,7 @@ fun testStringStack(stackUnderTest: Stack<String>, testStrings: ArrayList<String
 
     println("testing peek() and pop()...")
 
-    for(i in 1..testStrings.size){
+    repeat(testStrings.size){
         val peek = stackUnderTest.peek()
         println("peek()='$peek'")
 
